@@ -1,12 +1,12 @@
 SHELL := /bin/bash
 NAME=kutt
 HOST=gcr.io/bugsnag-155907
-IMAGE=$(HOST)/$(NAME):$(VER)
+IMAGE=$(HOST)/$(NAME):$(VERSION)
 
 .DEFAULT_GOAL := help
 
 tag: validate-version
-	@git tag v$(VERSION)
+	@git tag $(VERSION)
 	@git push --tags
 
 validate-version:
