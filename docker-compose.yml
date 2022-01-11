@@ -2,7 +2,7 @@ version: "3"
 
 services:
   kutt:
-    image: kutt/kutt
+    build: .
     depends_on:
       - postgres
       - redis
@@ -10,7 +10,7 @@ services:
     ports:
       - "3000:3000"
     env_file:
-      - .env
+      - .docker.env
     environment:
       DB_HOST: postgres
       DB_NAME: kutt
