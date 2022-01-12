@@ -71,8 +71,8 @@ export const validateUrl: RequestHandler = async (req, res, next) => {
     return res.status(400).json({ error: "No target has been provided." });
 
   // validate URL length
-  if (req.body.target.length > 3096) {
-    return res.status(400).json({ error: "Maximum URL length is 3096." });
+  if (req.body.target.length > 5000) {
+    return res.status(400).json({ error: "Maximum URL length is 5000." });
   }
 
   // Validate URL

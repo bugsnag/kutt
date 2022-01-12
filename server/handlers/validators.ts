@@ -46,8 +46,8 @@ export const createLink = [
     .withMessage("Target is missing.")
     .isString()
     .trim()
-    .isLength({ min: 1, max: 3096 })
-    .withMessage("Maximum URL length is 3096.")
+    .isLength({ min: 1, max: 5000 })
+    .withMessage("Maximum URL length is 5000.")
     .customSanitizer(addProtocol)
     .custom(
       value =>
@@ -86,8 +86,8 @@ export const createLink = [
     .optional({ nullable: true, checkFalsy: true })
     .isString()
     .trim()
-    .isLength({ min: 0, max: 3096 })
-    .withMessage("Description length must be between 0 and 3096."),
+    .isLength({ min: 0, max: 5000 })
+    .withMessage("Description length must be between 0 and 5000."),
   body("expire_in")
     .optional({ nullable: true, checkFalsy: true })
     .isString()
@@ -134,8 +134,8 @@ export const editLink = [
     .optional({ checkFalsy: true, nullable: true })
     .isString()
     .trim()
-    .isLength({ min: 1, max: 3096 })
-    .withMessage("Maximum URL length is 3096.")
+    .isLength({ min: 1, max: 5000 })
+    .withMessage("Maximum URL length is 5000.")
     .customSanitizer(addProtocol)
     .custom(
       value =>
@@ -175,8 +175,8 @@ export const editLink = [
     .optional({ nullable: true, checkFalsy: true })
     .isString()
     .trim()
-    .isLength({ min: 0, max: 3096 })
-    .withMessage("Description length must be between 0 and 3096."),
+    .isLength({ min: 0, max: 5000 })
+    .withMessage("Description length must be between 0 and 5000."),
   param("id", "ID is invalid.")
     .exists({ checkFalsy: true, checkNull: true })
     .isLength({ min: 36, max: 36 })
