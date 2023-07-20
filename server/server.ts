@@ -34,7 +34,7 @@ app.prepare().then(async () => {
   const server = express();
   var middleware = Bugsnag.getPlugin('express')
 
-  // Capture errors in downstream middleware
+  // Bugsnag: Capture errors in downstream middleware
   server.use(middleware.requestHandler)
 
   server.set("trust proxy", true);
@@ -75,7 +75,7 @@ app.prepare().then(async () => {
 
   server.get("/:id", asyncHandler(links.redirect(app)));
 
-  // This handles any errors that Express catches
+  // Bugsnag: This handles any errors that Express catches
   server.use(middleware.errorHandler)
 
   // Error handler
