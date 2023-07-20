@@ -32,8 +32,10 @@ Bugsnag.start({
 
 app.prepare().then(async () => {
   const server = express();
+  var middleware = Bugsnag.getPlugin('express')
 
-  server.use(Bugsnag.getPlugin('express').requestHandler)
+  // Capture errors in downstream middleware
+  server.use(middleware.requestHandler)
 
   server.set("trust proxy", true);
 
@@ -82,4 +84,7 @@ app.prepare().then(async () => {
   server.listen(port, () => {
     console.log(`> Ready on http://localhost:${port}`);
   });
+
+  // This handles any errors that Express catches
+  server.use(middleware.errorHandler)
 });
