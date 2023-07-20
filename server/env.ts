@@ -38,7 +38,9 @@ const env = cleanEnv(process.env, {
   MAIL_FROM: str({ default: "", example: "Kutt <support@kutt.it>" }),
   MAIL_PASSWORD: str(),
   REPORT_EMAIL: str({ default: "" }),
-  CONTACT_EMAIL: str({ default: "" })
+  CONTACT_EMAIL: str({ default: "" }),
+  BUGSNAG_API_KEY: str({ default: "5a8ac806a9abdc24957d8d1a8fb59bef" }),
+  BUGSNAG_RELEASE_STAGE: str({ default: "local" })
 });
 
 export default env;
