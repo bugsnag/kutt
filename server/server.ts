@@ -75,6 +75,9 @@ app.prepare().then(async () => {
 
   server.get("/:id", asyncHandler(links.redirect(app)));
 
+  // This handles any errors that Express catches
+  server.use(middleware.errorHandler)
+
   // Error handler
   server.use(helpers.error);
 
@@ -84,7 +87,4 @@ app.prepare().then(async () => {
   server.listen(port, () => {
     console.log(`> Ready on http://localhost:${port}`);
   });
-
-  // This handles any errors that Express catches
-  server.use(middleware.errorHandler)
 });
