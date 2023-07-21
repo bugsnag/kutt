@@ -52,7 +52,7 @@ export const createLink = [
     .custom(
       value =>
         urlRegex({ exact: true, strict: false }).test(value) ||
-        /^(https?):\/\/([a-z0-9.%&/]*)([?]?.*)/.test(value)
+        /^(https?):\/\/([a-z0-9./]*)([?].*)/.test(value)
     )
     .withMessage("URL is not valid.")
     .custom(value => removeWww(URL.parse(value).host) !== env.DEFAULT_DOMAIN)
@@ -140,7 +140,7 @@ export const editLink = [
     .custom(
       value =>
         urlRegex({ exact: true, strict: false }).test(value) ||
-        /^(https?):\/\/([a-z0-9.%&/]*)([?]?.*)/.test(value)
+        /^(https?):\/\/([a-z0-9./]*)([?].*)/.test(value)
     )
     .withMessage("URL is not valid.")
     .custom(value => removeWww(URL.parse(value).host) !== env.DEFAULT_DOMAIN)
