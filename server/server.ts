@@ -8,6 +8,9 @@ import helmet from "helmet";
 import morgan from "morgan";
 import nextApp from "next";
 
+import Bugsnag from '@bugsnag/js'
+import BugsnagPluginExpress from '@bugsnag/plugin-express'
+
 import * as helpers from "./handlers/helpers";
 import * as links from "./handlers/links";
 import * as auth from "./handlers/auth";
@@ -21,8 +24,18 @@ const port = env.PORT;
 const app = nextApp({ dir: "./client", dev: env.isDev });
 const handle = app.getRequestHandler();
 
+Bugsnag.start({
+  apiKey: env.BUGSNAG_API_KEY,
+  plugins: [BugsnagPluginExpress],
+  releaseStage: env.BUGSNAG_RELEASE_STAGE
+})
+
 app.prepare().then(async () => {
   const server = express();
+  var middleware = Bugsnag.getPlugin('express')
+
+  // Bugsnag: Capture errors in downstream middleware
+  server.use(middleware.requestHandler)
 
   server.set("trust proxy", true);
 
@@ -61,6 +74,9 @@ app.prepare().then(async () => {
   );
 
   server.get("/:id", asyncHandler(links.redirect(app)));
+
+  // Bugsnag: This handles any errors that Express catches
+  server.use(middleware.errorHandler)
 
   // Error handler
   server.use(helpers.error);
