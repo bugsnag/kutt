@@ -15,7 +15,7 @@ validate-version:
 		exit 1; \
 	fi
 
-build:
+build: tag
 	@echo "---> [Executing docker build]"
 	@docker build . -t $(IMAGE)
 	@docker push $(IMAGE)
