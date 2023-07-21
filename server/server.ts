@@ -43,7 +43,7 @@ app.prepare().then(async () => {
     server.use(morgan("combined", { stream }));
   }
 
-  server.use(helmet({ contentSecurityPolicy: false }));
+  server.use(helmet({ contentSecurityPolicy: true }));
   server.use(cookieParser());
   server.use(express.json());
   server.use(express.urlencoded({ extended: true }));
