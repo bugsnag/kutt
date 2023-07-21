@@ -17,7 +17,6 @@ services:
       DB_USER: user
       DB_PASSWORD: pass
       REDIS_HOST: redis
-      BUGSNAG_RELEASE_STAGE: dev
 
   redis:
     image: redis:6.0-alpine
