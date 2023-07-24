@@ -17,7 +17,7 @@ validate-version:
 
 build: tag
 	@echo "---> [Executing docker build]"
-	@docker build . -t $(IMAGE)
+	@docker buildx build --platform linux/amd64 --push . -t $(IMAGE)
 	@docker push $(IMAGE)
 	@echo $(IMAGE)
 
