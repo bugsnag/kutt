@@ -7,12 +7,13 @@ import express from "express";
 import helmet from "helmet";
 import morgan from "morgan";
 import nextApp from "next";
-import * as Sentry from "@sentry/node";
+
+import Bugsnag from '@bugsnag/js'
+import BugsnagPluginExpress from '@bugsnag/plugin-express'
 
 import * as helpers from "./handlers/helpers";
 import * as links from "./handlers/links";
 import * as auth from "./handlers/auth";
-import __v1Routes from "./__v1";
 import routes from "./routes";
 import { stream } from "./config/winston";
 
@@ -23,28 +24,26 @@ const port = env.PORT;
 const app = nextApp({ dir: "./client", dev: env.isDev });
 const handle = app.getRequestHandler();
 
+Bugsnag.start({
+  apiKey: env.BUGSNAG_API_KEY,
+  plugins: [BugsnagPluginExpress],
+  releaseStage: env.BUGSNAG_RELEASE_STAGE
+})
+
 app.prepare().then(async () => {
   const server = express();
+  var middleware = Bugsnag.getPlugin('express')
+
+  // Bugsnag: Capture errors in downstream middleware
+  server.use(middleware.requestHandler)
 
   server.set("trust proxy", true);
 
   if (env.isDev) {
     server.use(morgan("combined", { stream }));
-  } else if (env.SENTRY_PRIVATE_DSN) {
-    Sentry.init({
-      dsn: env.SENTRY_PRIVATE_DSN,
-      environment: process.env.NODE_ENV
-    });
-
-    server.use(
-      Sentry.Handlers.requestHandler({
-        ip: true,
-        user: ["id", "email"]
-      })
-    );
   }
 
-  server.use(helmet());
+  server.use(helmet({ contentSecurityPolicy: true }));
   server.use(cookieParser());
   server.use(express.json());
   server.use(express.urlencoded({ extended: true }));
@@ -55,7 +54,6 @@ app.prepare().then(async () => {
   server.use(asyncHandler(links.redirectCustomDomain));
 
   server.use("/api/v2", routes);
-  server.use("/api", __v1Routes);
 
   server.get(
     "/reset-password/:resetPasswordToken?",
@@ -77,14 +75,16 @@ app.prepare().then(async () => {
 
   server.get("/:id", asyncHandler(links.redirect(app)));
 
+  // Bugsnag: This handles any errors that Express catches
+  server.use(middleware.errorHandler)
+
   // Error handler
   server.use(helpers.error);
 
   // Handler everything else by Next.js
   server.get("*", (req, res) => handle(req, res));
 
-  server.listen(port, err => {
-    if (err) throw err;
+  server.listen(port, () => {
     console.log(`> Ready on http://localhost:${port}`);
   });
 });

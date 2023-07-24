@@ -1,6 +1,6 @@
 import { body, param } from "express-validator";
 import { isAfter, subDays, subHours, addMilliseconds } from "date-fns";
-import urlRegex from "url-regex";
+import urlRegex from "url-regex-safe";
 import { promisify } from "util";
 import bcrypt from "bcryptjs";
 import axios from "axios";
@@ -52,7 +52,7 @@ export const createLink = [
     .custom(
       value =>
         urlRegex({ exact: true, strict: false }).test(value) ||
-        /^(?!https?)(\w+):\/\//.test(value)
+        /^(https?):\/\/([a-z0-9./]*)([?]?.*)/.test(value)
     )
     .withMessage("URL is not valid.")
     .custom(value => removeWww(URL.parse(value).host) !== env.DEFAULT_DOMAIN)
@@ -140,11 +140,16 @@ export const editLink = [
     .custom(
       value =>
         urlRegex({ exact: true, strict: false }).test(value) ||
-        /^(?!https?)(\w+):\/\//.test(value)
+        /^(https?):\/\/([a-z0-9./]*)([?]?.*)/.test(value)
     )
     .withMessage("URL is not valid.")
     .custom(value => removeWww(URL.parse(value).host) !== env.DEFAULT_DOMAIN)
     .withMessage(`${env.DEFAULT_DOMAIN} URLs are not allowed.`),
+  body("password")
+    .optional({ nullable: true, checkFalsy: true })
+    .isString()
+    .isLength({ min: 3, max: 64 })
+    .withMessage("Password length must be between 3 and 64."),
   body("address")
     .optional({ checkFalsy: true, nullable: true })
     .isString()

@@ -2,12 +2,11 @@ import formatDistanceToNow from "date-fns/formatDistanceToNow";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import React, { FC, useState, useEffect } from "react";
 import { useFormState } from "react-use-form-state";
-import { Flex } from "reflexbox/styled-components";
+import { Flex } from "rebass/styled-components";
 import styled, { css } from "styled-components";
 import { ifProp } from "styled-tools";
 import getConfig from "next/config";
 import QRCode from "qrcode.react";
-import Link from "next/link";
 import differenceInMilliseconds from "date-fns/differenceInMilliseconds";
 import ms from "ms";
 
@@ -116,14 +115,15 @@ interface EditForm {
   address: string;
   description?: string;
   expire_in?: string;
+  password?: string;
 }
 
 const Row: FC<RowProps> = ({ index, link, setDeleteModal }) => {
-  const isAdmin = useStoreState(s => s.auth.isAdmin);
-  const ban = useStoreActions(s => s.links.ban);
-  const edit = useStoreActions(s => s.links.edit);
+  const isAdmin = useStoreState((s) => s.auth.isAdmin);
+  const ban = useStoreActions((s) => s.links.ban);
+  const edit = useStoreActions((s) => s.links.edit);
   const [banFormState, { checkbox }] = useFormState<BanForm>();
-  const [editFormState, { text, label }] = useFormState<EditForm>(
+  const [editFormState, { text, label, password }] = useFormState<EditForm>(
     {
       target: link.target,
       address: link.address,
@@ -132,7 +132,8 @@ const Row: FC<RowProps> = ({ index, link, setDeleteModal }) => {
         ? ms(differenceInMilliseconds(new Date(link.expire_in), new Date()), {
             long: true
           })
-        : ""
+        : "",
+      password: ""
     },
     { withIds: true }
   );
@@ -175,11 +176,12 @@ const Row: FC<RowProps> = ({ index, link, setDeleteModal }) => {
     } catch (err) {
       setEditMessage(errorMessage(err));
     }
+    editFormState.setField("password", "");
     setEditLoading(false);
   };
 
   const toggleEdit = () => {
-    setShowEdit(s => !s);
+    setShowEdit((s) => !s);
     if (showEdit) editFormState.reset();
     setEditMessage("");
   };
@@ -277,16 +279,19 @@ const Row: FC<RowProps> = ({ index, link, setDeleteModal }) => {
             </>
           )}
           {link.visit_count > 0 && (
-            <Link href={`/stats?id=${link.id}`}>
-              <ALink title="View stats" forButton>
-                <Action
-                  name="pieChart"
-                  stroke={Colors.PieIcon}
-                  strokeWidth="2.5"
-                  backgroundColor={Colors.PieIconBg}
-                />
-              </ALink>
-            </Link>
+            <ALink
+              href={`/stats?id=${link.id}`}
+              title="View stats"
+              forButton
+              isNextLink
+            >
+              <Action
+                name="pieChart"
+                stroke={Colors.PieIcon}
+                strokeWidth="2.5"
+                backgroundColor={Colors.PieIconBg}
+              />
+            </ALink>
           )}
           <Action
             name="qrcode"
@@ -355,7 +360,7 @@ const Row: FC<RowProps> = ({ index, link, setDeleteModal }) => {
                   />
                 </Flex>
               </Col>
-              <Col alignItems="flex-start">
+              <Col alignItems="flex-start" mr={3}>
                 <Text
                   {...label("address")}
                   as="label"
@@ -376,6 +381,33 @@ const Row: FC<RowProps> = ({ index, link, setDeleteModal }) => {
                     pl={[3, 24]}
                     pr={[3, 24]}
                     required
+                  />
+                </Flex>
+              </Col>
+              <Col alignItems="flex-start">
+                <Text
+                  {...label("password")}
+                  as="label"
+                  mb={2}
+                  fontSize={[14, 15]}
+                  bold
+                >
+                  Password
+                </Text>
+                <Flex as="form">
+                  <TextInput
+                    {...password({
+                      name: "password"
+                    })}
+                    placeholder={link.password ? "••••••••" : "Password..."}
+                    autocomplete="off"
+                    data-lpignore
+                    pl={[3, 24]}
+                    pr={[3, 24]}
+                    placeholderSize={[13, 14]}
+                    fontSize={[14, 15]}
+                    height={[40, 44]}
+                    width={[1, 210, 240]}
                   />
                 </Flex>
               </Col>
@@ -473,7 +505,7 @@ const Row: FC<RowProps> = ({ index, link, setDeleteModal }) => {
           </H2>
           <Text mb={24} textAlign="center">
             Are you sure do you want to ban the link{" "}
-            <Span bold>"{removeProtocol(link.link)}"</Span>?
+            <Span bold>&quot;{removeProtocol(link.link)}&quot;</Span>?
           </Text>
           <RowCenter>
             <Checkbox {...checkbox("user")} label="User" mb={12} />
@@ -516,9 +548,9 @@ interface Form {
 }
 
 const LinksTable: FC = () => {
-  const isAdmin = useStoreState(s => s.auth.isAdmin);
-  const links = useStoreState(s => s.links);
-  const { get, remove } = useStoreActions(s => s.links);
+  const isAdmin = useStoreState((s) => s.auth.isAdmin);
+  const links = useStoreState((s) => s.links);
+  const { get, remove } = useStoreActions((s) => s.links);
   const [tableMessage, setTableMessage] = useState("No links to show.");
   const [deleteModal, setDeleteModal] = useState(-1);
   const [deleteLoading, setDeleteLoading] = useState(false);
@@ -532,12 +564,12 @@ const LinksTable: FC = () => {
   const linkToDelete = links.items[deleteModal];
 
   useEffect(() => {
-    get(options).catch(err =>
+    get(options).catch((err) =>
       setTableMessage(err?.response?.data?.error || "An error occurred.")
     );
-  }, [options.limit, options.skip, options.all]);
+  }, [options, get]);
 
-  const onSubmit = e => {
+  const onSubmit = (e) => {
     e.preventDefault();
     get(options);
   };
@@ -566,7 +598,7 @@ const LinksTable: FC = () => {
       flexShrink={1}
     >
       <Flex as="ul" m={0} p={0} style={{ listStyle: "none" }}>
-        {["10", "25", "50"].map(c => (
+        {["10", "25", "50"].map((c) => (
           <Flex key={c} ml={[10, 12]}>
             <NavButton
               disabled={options.limit === c}
@@ -613,7 +645,7 @@ const LinksTable: FC = () => {
       <H2 mb={3} light>
         Recent shortened links.
       </H2>
-      <Table scrollWidth="800px">
+      <Table scrollWidth="1000px">
         <thead>
           <Tr justifyContent="space-between">
             <Th flexGrow={1} flexShrink={1}>
@@ -692,7 +724,7 @@ const LinksTable: FC = () => {
             </H2>
             <Text textAlign="center">
               Are you sure do you want to delete the link{" "}
-              <Span bold>"{removeProtocol(linkToDelete.link)}"</Span>?
+              <Span bold>&quot;{removeProtocol(linkToDelete.link)}&quot;</Span>?
             </Text>
             <Flex justifyContent="center" mt={44}>
               {deleteLoading ? (
