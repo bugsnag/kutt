@@ -46,8 +46,8 @@ export const createLink = [
     .withMessage("Target is missing.")
     .isString()
     .trim()
-    .isLength({ min: 1, max: 5000 })
-    .withMessage("Maximum URL length is 5000.")
+    .isLength({ min: 1, max: env.TARGET_LINK_MAX_LENGTH })
+    .withMessage(`Maximum URL length is ${env.TARGET_LINK_MAX_LENGTH}.`)
     .customSanitizer(addProtocol)
     .custom(
       value =>
@@ -134,8 +134,8 @@ export const editLink = [
     .optional({ checkFalsy: true, nullable: true })
     .isString()
     .trim()
-    .isLength({ min: 1, max: 5000 })
-    .withMessage("Maximum URL length is 5000.")
+    .isLength({ min: 1, max: env.TARGET_LINK_MAX_LENGTH })
+    .withMessage(`Maximum URL length is ${env.TARGET_LINK_MAX_LENGTH}.`)
     .customSanitizer(addProtocol)
     .custom(
       value =>
