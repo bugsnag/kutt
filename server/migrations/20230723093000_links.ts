@@ -2,9 +2,9 @@ import { Knex } from "knex";
 
 export async function up(knex: Knex): Promise<any> {
 
-  await knex.raw(`
-    ALTER TABLE links ALTER COLUMN target TYPE VARCHAR;
-  `);
+  await knex.schema.alterTable("links", table => {
+    table.specificType("target", "varchar").notNullable().alter();
+  });
 }
 
 export async function down(): Promise<any> {
