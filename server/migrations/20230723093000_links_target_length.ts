@@ -3,7 +3,7 @@ import { Knex } from "knex";
 export async function up(knex: Knex): Promise<any> {
 
   await knex.schema.alterTable("links", table => {
-    table.specificType("target", "varchar").notNullable().alter();
+    table.string("target").notNullable().alter();
   });
 }
 
