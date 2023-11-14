@@ -32,7 +32,7 @@ Bugsnag.start({
 
 app.prepare().then(async () => {
   const server = express();
-  var middleware = Bugsnag.getPlugin('express')
+  const middleware = Bugsnag.getPlugin('express')
 
   // Bugsnag: Capture errors in downstream middleware
   server.use(middleware.requestHandler)
