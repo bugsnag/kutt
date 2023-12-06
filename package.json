@@ -14,8 +14,7 @@
     "migrate:make": "knex migrate:make --env production",
     "lint": "eslint server/ --ext .js,.ts --fix",
     "lint:nofix": "eslint server/ --ext .js,.ts",
-    "docs:build": "cd docs/api && tsc generate.ts --resolveJsonModule && node generate && cd ../..",
-    "prepare": "husky install"
+    "docs:build": "cd docs/api && tsc generate.ts --resolveJsonModule && node generate && cd ../.."
   },
   "repository": {
     "type": "git",
@@ -101,7 +100,6 @@
     "@types/jsonwebtoken": "^9.0.5",
     "@types/morgan": "^1.7.37",
     "@types/ms": "^0.7.31",
-    "@types/nanoid": "^3.0.0",
     "@types/node": "^20.10.3",
     "@types/node-cron": "^3.0.11",
     "@types/nodemailer": "^6.4.6",
