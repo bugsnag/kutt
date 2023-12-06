@@ -1,7 +1,7 @@
 import { Flex } from "rebass/styled-components";
 import React, { useEffect } from "react";
 import styled from "styled-components";
-import decode from "jwt-decode";
+import { jwtDecode } from "jwt-decode";
 import cookie from "js-cookie";
 
 import AppWrapper from "../components/AppWrapper";
@@ -39,7 +39,7 @@ const Verify: NextPage<Props> = ({ token }) => {
   useEffect(() => {
     if (token) {
       cookie.set("token", token, { expires: 7 });
-      const payload: TokenPayload = decode(token);
+      const payload: TokenPayload = jwtDecode(token);
       addAuth(payload);
     }
   }, [token, addAuth]);

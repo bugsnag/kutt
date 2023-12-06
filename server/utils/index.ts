@@ -1,5 +1,5 @@
 import ms from "ms";
-import nanoid from "nanoid/generate";
+import { customAlphabet } from "nanoid";
 import JWT from "jsonwebtoken";
 import {
   differenceInDays,
@@ -40,11 +40,12 @@ export const signToken = (user: UserJoined) =>
     env.JWT_SECRET
   );
 
-export const generateId = async (domain_id: number = null) => {
-  const address = nanoid(
+export const generateId = async (domain_id: number) => {
+  const id = customAlphabet(
     "abcdefghkmnpqrstuvwxyzABCDEFGHKLMNPQRSTUVWXYZ23456789",
     env.LINK_LENGTH
   );
+  const address = id();
   const link = await query.link.find({ address, domain_id });
   if (!link) return address;
   return generateId(domain_id);
@@ -75,6 +76,7 @@ export const getStatsLimit = (): number =>
   env.DEFAULT_MAX_STATS_PER_LINK || 100000000;
 
 export const getStatsCacheTime = (total?: number): number => {
+  if (!total) return ms("1 minutes") / 1000;
   return (total > 50000 ? ms("5 minutes") : ms("1 minutes")) / 1000;
 };
 

@@ -2,7 +2,7 @@ import { differenceInMinutes, addMinutes, subMinutes } from "date-fns";
 import { Handler } from "express";
 import passport from "passport";
 import bcrypt from "bcryptjs";
-import nanoid from "nanoid";
+import { nanoid } from 'nanoid'
 import { v4 as uuid } from "uuid";
 import axios from "axios";
 
@@ -140,8 +140,8 @@ export const verify: Handler = async (req, res, next) => {
     },
     {
       verified: true,
-      verification_token: null,
-      verification_expires: null
+      verification_token: undefined,
+      verification_expires: undefined
     }
   );
 
@@ -209,7 +209,7 @@ export const resetPassword: Handler = async (req, res, next) => {
         reset_password_token: resetPasswordToken,
         reset_password_expires: [">", new Date().toISOString()]
       },
-      { reset_password_expires: null, reset_password_token: null }
+      { reset_password_expires: undefined, reset_password_token: undefined }
     );
 
     if (user) {
@@ -278,9 +278,9 @@ export const changeEmail: Handler = async (req, res, next) => {
         change_email_expires: [">", new Date().toISOString()]
       },
       {
-        change_email_token: null,
-        change_email_expires: null,
-        change_email_address: null,
+        change_email_token: undefined,
+        change_email_expires: undefined,
+        change_email_address: undefined,
         email: foundUser.change_email_address
       }
     );

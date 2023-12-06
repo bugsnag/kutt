@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { Flex } from "rebass/styled-components";
-import decode from "jwt-decode";
+import { jwtDecode } from "jwt-decode";
 import { NextPage } from "next";
 import cookie from "js-cookie";
 
@@ -22,7 +22,7 @@ const VerifyEmail: NextPage<Props> = ({ token }) => {
   useEffect(() => {
     if (token) {
       cookie.set("token", token, { expires: 7 });
-      const decoded: TokenPayload = decode(token);
+      const decoded: TokenPayload = jwtDecode(token);
       addAuth(decoded);
     }
   }, [addAuth, token]);

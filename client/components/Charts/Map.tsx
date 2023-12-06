@@ -49,8 +49,8 @@ const Map: FC<Props> = ({ data }) => {
       {world.layers.map(layer => (
         <Tooltip
           key={layer.id}
-          type="light"
-          effect="float"
+          variant="light"
+          float={true}
           id={`${layer.id}-tooltip-country`}
         >
           {layer.name}:{" "}
