@@ -2,7 +2,7 @@ import App, { AppContext } from "next/app";
 import { StoreProvider } from "easy-peasy";
 import getConfig from "next/config";
 import Router from "next/router";
-import decode from "jwt-decode";
+import { jwtDecode } from "jwt-decode";
 import cookie from "js-cookie";
 import Head from "next/head";
 import React from "react";
@@ -25,7 +25,7 @@ class MyApp extends App<any> {
 
     const token =
       ctx.req && (ctx.req as any).cookies && (ctx.req as any).cookies.token;
-    const tokenPayload: TokenPayload = token ? decode(token) : null;
+    const tokenPayload: TokenPayload = token ? jwtDecode(token) : null;
 
     if (tokenPayload) {
       store.dispatch.auth.add(tokenPayload);

@@ -1,13 +1,13 @@
-FROM node:12-alpine
+FROM node:20-alpine
 
-RUN apk add --update bash
+RUN apk add --no-cache bash
 
-# Setting working directory. 
+# Setting working directory.
 WORKDIR /usr/src/app
 
 # Installing dependencies
-COPY package*.json ./
-RUN npm install
+COPY package*.json yarn.lock ./
+RUN yarn install
 
 # Copying source files
 COPY . .
@@ -16,9 +16,9 @@ COPY . .
 RUN chmod +x ./wait-for-it.sh
 
 # Build files
-RUN npm run build
+RUN yarn build
 
 EXPOSE 3000
 
 # Running the app
-CMD [ "npm", "start" ]
+CMD [ "yarn", "start" ]
