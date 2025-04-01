@@ -88,8 +88,8 @@
     "use-media": "^1.4.0",
     "useragent": "^2.2.1",
     "uuid": "^11.1.0",
-    "winston": "^3.3.3",
-    "winston-daily-rotate-file": "^4.7.1"
+    "winston": "^3.17.0",
+    "winston-daily-rotate-file": "^5.0.0"
   },
   "devDependencies": {
     "@types/bcryptjs": "^2.4.2",
