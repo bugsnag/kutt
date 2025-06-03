@@ -23,8 +23,8 @@ validate-version:
 build: tag
 	@echo "---> [Executing docker build]"
 	@docker buildx build --platform linux/amd64 --push . -t $(GCR_IMAGE) -t $(ECR_IMAGE)
-	@echo pushed to GCR: $(GCR_IMAGE)
-	@echo pushed to ECR: $(ECR_IMAGE)
+	@echo "pushed to GCR: $(GCR_IMAGE)"
+	@echo "pushed to ECR: $(ECR_IMAGE)"
 
 help: ## Print help for all functions of Makefile
 	@awk 'BEGIN {FS = ":.*?## "} /^[a-zA-Z_-]+:.*?## / {sub("\\\\n",sprintf("\n%22c"," "), $$2);printf "\033[36m%-20s\033[0m %s\n", $$1, $$2}' $(MAKEFILE_LIST)
