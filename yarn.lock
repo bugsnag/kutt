@@ -10563,14 +10563,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-dom@npm:canary":
-  version: 19.2.0-canary-3958d5d8-20250807
-  resolution: "react-dom@npm:19.2.0-canary-3958d5d8-20250807"
+"react-dom@npm:19.3.0-canary-fd524fe0-20251121":
+  version: 19.3.0-canary-fd524fe0-20251121
+  resolution: "react-dom@npm:19.3.0-canary-fd524fe0-20251121"
   dependencies:
-    scheduler: "npm:0.27.0-canary-3958d5d8-20250807"
+    scheduler: "npm:0.28.0-canary-fd524fe0-20251121"
   peerDependencies:
-    react: 19.2.0-canary-3958d5d8-20250807
-  checksum: 918e72c9680651c8bc7706f95e796c023eaac2c390d9326b0462faaf285496a02d46a70d48fe380d951016f20f38b02a483599eb0be44127a43091c6f2f19fa5
+    react: 19.3.0-canary-fd524fe0-20251121
+  checksum: 547cd5ff42d2bf826dcc4d5dafc3679c29fc7cc2feb9d47c700041f14480cb7bfeaca926934c50890b82358af3597f29c6a3f8f398c945f6c5978162606009ab
   languageName: node
   linkType: hard
 
@@ -10679,10 +10679,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react@npm:canary":
-  version: 19.2.0-canary-3958d5d8-20250807
-  resolution: "react@npm:19.2.0-canary-3958d5d8-20250807"
-  checksum: bd77b08b6e8395374d3f34c11c21857ccdc8dfd8bc3e134d4ba2dada2b11817737eb68ba33c8eb8a28f7d9dd31e910be5ee6fb2d8ded2998704af11238cedaa1
+"react@npm:19.3.0-canary-fd524fe0-20251121":
+  version: 19.3.0-canary-fd524fe0-20251121
+  resolution: "react@npm:19.3.0-canary-fd524fe0-20251121"
+  checksum: 923af510a02d55f18b0743ca669343cd3236b92165998c94d9651c0d2dc5b36cfe4648f3f511192384cdc648696910b01e0c46c35129707267588f3c91e611e9
   languageName: node
   linkType: hard
 
@@ -11127,10 +11127,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"scheduler@npm:0.27.0-canary-3958d5d8-20250807":
-  version: 0.27.0-canary-3958d5d8-20250807
-  resolution: "scheduler@npm:0.27.0-canary-3958d5d8-20250807"
-  checksum: 38d27daf72bfc8d688075bb919085584e8496a82bc2c435c40f5f8cd1b60393a804a8b3049da04b4bbd620d87dad58beede3913c3a1fed2c8bc9f45f28d3b3d0
+"scheduler@npm:0.28.0-canary-fd524fe0-20251121":
+  version: 0.28.0-canary-fd524fe0-20251121
+  resolution: "scheduler@npm:0.28.0-canary-fd524fe0-20251121"
+  checksum: 4c235c35fca427d1df7f8502af1e1f6040c6221bb5bf3c9c62800abf24580b3a1b07a5ee604afd6fdf5766b192a37ea50086e103d49cb117061533abe5822a05
   languageName: node
   linkType: hard
 
