@@ -2074,74 +2074,74 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@next/env@npm:15.4.6":
-  version: 15.4.6
-  resolution: "@next/env@npm:15.4.6"
-  checksum: 039a757f5e083f44bd71268d804e86064233b023c72930ab45a3a46ba651c5bd474096550ca140b9ec00338c4013afbba7972c09eba23082005d7e9086a4eb67
+"@next/env@npm:15.5.7":
+  version: 15.5.7
+  resolution: "@next/env@npm:15.5.7"
+  checksum: f92d99e5fa3516c6b7699abafd9bd813f5c1889dd257ab098f1b71f93137f5e4f49792e22f6dddf8a59efcb134e8e84277c983ff88607b2a42aac651bfde78ea
   languageName: node
   linkType: hard
 
-"@next/eslint-plugin-next@npm:15.4.6":
-  version: 15.4.6
-  resolution: "@next/eslint-plugin-next@npm:15.4.6"
+"@next/eslint-plugin-next@npm:15.5.7, @next/eslint-plugin-next@npm:^15.5.7":
+  version: 15.5.7
+  resolution: "@next/eslint-plugin-next@npm:15.5.7"
   dependencies:
     fast-glob: "npm:3.3.1"
-  checksum: 5a1a216474882bdeedf2033e6cae52c3add92436a9f781e3b68dccc7b9f2d24373536d8fd2d934cc5535352d7ca17529281fb6f61859cec5bed6366ee9c372cc
+  checksum: a204cbf5d84f812591de2b43f81629025c07438873d30e0b8c4af55c4eef0651fec0ea057634f57cdbfa5e86a5c1c0e6e0a825f53d6a3d134d5855a9719f6bfa
   languageName: node
   linkType: hard
 
-"@next/swc-darwin-arm64@npm:15.4.6":
-  version: 15.4.6
-  resolution: "@next/swc-darwin-arm64@npm:15.4.6"
+"@next/swc-darwin-arm64@npm:15.5.7":
+  version: 15.5.7
+  resolution: "@next/swc-darwin-arm64@npm:15.5.7"
   conditions: os=darwin & cpu=arm64
   languageName: node
   linkType: hard
 
-"@next/swc-darwin-x64@npm:15.4.6":
-  version: 15.4.6
-  resolution: "@next/swc-darwin-x64@npm:15.4.6"
+"@next/swc-darwin-x64@npm:15.5.7":
+  version: 15.5.7
+  resolution: "@next/swc-darwin-x64@npm:15.5.7"
   conditions: os=darwin & cpu=x64
   languageName: node
   linkType: hard
 
-"@next/swc-linux-arm64-gnu@npm:15.4.6":
-  version: 15.4.6
-  resolution: "@next/swc-linux-arm64-gnu@npm:15.4.6"
+"@next/swc-linux-arm64-gnu@npm:15.5.7":
+  version: 15.5.7
+  resolution: "@next/swc-linux-arm64-gnu@npm:15.5.7"
   conditions: os=linux & cpu=arm64 & libc=glibc
   languageName: node
   linkType: hard
 
-"@next/swc-linux-arm64-musl@npm:15.4.6":
-  version: 15.4.6
-  resolution: "@next/swc-linux-arm64-musl@npm:15.4.6"
+"@next/swc-linux-arm64-musl@npm:15.5.7":
+  version: 15.5.7
+  resolution: "@next/swc-linux-arm64-musl@npm:15.5.7"
   conditions: os=linux & cpu=arm64 & libc=musl
   languageName: node
   linkType: hard
 
-"@next/swc-linux-x64-gnu@npm:15.4.6":
-  version: 15.4.6
-  resolution: "@next/swc-linux-x64-gnu@npm:15.4.6"
+"@next/swc-linux-x64-gnu@npm:15.5.7":
+  version: 15.5.7
+  resolution: "@next/swc-linux-x64-gnu@npm:15.5.7"
   conditions: os=linux & cpu=x64 & libc=glibc
   languageName: node
   linkType: hard
 
-"@next/swc-linux-x64-musl@npm:15.4.6":
-  version: 15.4.6
-  resolution: "@next/swc-linux-x64-musl@npm:15.4.6"
+"@next/swc-linux-x64-musl@npm:15.5.7":
+  version: 15.5.7
+  resolution: "@next/swc-linux-x64-musl@npm:15.5.7"
   conditions: os=linux & cpu=x64 & libc=musl
   languageName: node
   linkType: hard
 
-"@next/swc-win32-arm64-msvc@npm:15.4.6":
-  version: 15.4.6
-  resolution: "@next/swc-win32-arm64-msvc@npm:15.4.6"
+"@next/swc-win32-arm64-msvc@npm:15.5.7":
+  version: 15.5.7
+  resolution: "@next/swc-win32-arm64-msvc@npm:15.5.7"
   conditions: os=win32 & cpu=arm64
   languageName: node
   linkType: hard
 
-"@next/swc-win32-x64-msvc@npm:15.4.6":
-  version: 15.4.6
-  resolution: "@next/swc-win32-x64-msvc@npm:15.4.6"
+"@next/swc-win32-x64-msvc@npm:15.5.7":
+  version: 15.5.7
+  resolution: "@next/swc-win32-x64-msvc@npm:15.5.7"
   conditions: os=win32 & cpu=x64
   languageName: node
   linkType: hard
@@ -3078,15 +3078,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/bcryptjs@npm:^3.0.0":
-  version: 3.0.0
-  resolution: "@types/bcryptjs@npm:3.0.0"
-  dependencies:
-    bcryptjs: "npm:*"
-  checksum: 5d61ce381736f8252627cf32f2bbc17003c0361c6cf63ac23034a651b9c1edfdbf8f786730816e0b5257a927ffa369658562183a68495eb07ca2ddc77fbb171c
-  languageName: node
-  linkType: hard
-
 "@types/body-parser@npm:*":
   version: 1.19.6
   resolution: "@types/body-parser@npm:1.19.6"
@@ -3397,15 +3388,6 @@ __metadata:
   version: 1.2.7
   resolution: "@types/range-parser@npm:1.2.7"
   checksum: 361bb3e964ec5133fa40644a0b942279ed5df1949f21321d77de79f48b728d39253e5ce0408c9c17e4e0fd95ca7899da36841686393b9f7a1e209916e9381a3c
-  languageName: node
-  linkType: hard
-
-"@types/react-dom@npm:^18.3.7":
-  version: 18.3.7
-  resolution: "@types/react-dom@npm:18.3.7"
-  peerDependencies:
-    "@types/react": ^18.0.0
-  checksum: 8bd309e2c3d1604a28a736a24f96cbadf6c05d5288cfef8883b74f4054c961b6b3a5e997fd5686e492be903c8f3380dba5ec017eff3906b1256529cd2d39603e
   languageName: node
   linkType: hard
 
@@ -4472,15 +4454,6 @@ __metadata:
   dependencies:
     safe-buffer: "npm:5.1.2"
   checksum: 05f56db3a0fc31c89c86b605231e32ee143fb6ae38dc60616bc0970ae6a0f034172def99e69d3aed0e2c9e7cac84e2d63bc51a0b5ff6ab5fc8808cc8b29923c1
-  languageName: node
-  linkType: hard
-
-"bcryptjs@npm:*":
-  version: 3.0.2
-  resolution: "bcryptjs@npm:3.0.2"
-  bin:
-    bcrypt: bin/bcrypt
-  checksum: a0923cac99f83e913f8f4e4f42df6a27c6593b24d509900331d1280c4050b1544e602a0ac67b43f7bb5c969991c3ed77fd72f19b7dc873be8ee794da3d925c7e
   languageName: node
   linkType: hard
 
@@ -5908,11 +5881,11 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-config-next@npm:15.4.6":
-  version: 15.4.6
-  resolution: "eslint-config-next@npm:15.4.6"
+"eslint-config-next@npm:^15.5.7":
+  version: 15.5.7
+  resolution: "eslint-config-next@npm:15.5.7"
   dependencies:
-    "@next/eslint-plugin-next": "npm:15.4.6"
+    "@next/eslint-plugin-next": "npm:15.5.7"
     "@rushstack/eslint-patch": "npm:^1.10.3"
     "@typescript-eslint/eslint-plugin": "npm:^5.4.2 || ^6.0.0 || ^7.0.0 || ^8.0.0"
     "@typescript-eslint/parser": "npm:^5.4.2 || ^6.0.0 || ^7.0.0 || ^8.0.0"
@@ -5928,7 +5901,7 @@ __metadata:
   peerDependenciesMeta:
     typescript:
       optional: true
-  checksum: 06d139af13a03d196509a905375730280f928e9609d79934d8be49126899739580117a28473ba4fbaad47a3dfd6b0623c1cd5b73c9f3be910bcae4ff03d5a340
+  checksum: 80c573e0fe8d156c975fc3d6ea5c0a4425be5a2e067a47069835553d32369f9da32b7242d371e8a2a711792f0c621625dd5dcebb62c69ec177f7f5bfb7cfc5a5
   languageName: node
   linkType: hard
 
@@ -8562,8 +8535,7 @@ __metadata:
   dependencies:
     "@bugsnag/js": "npm:^8.6.0"
     "@bugsnag/plugin-express": "npm:^8.6.0"
-    "@next/eslint-plugin-next": "npm:15.4.6"
-    "@types/bcryptjs": "npm:^3.0.0"
+    "@next/eslint-plugin-next": "npm:^15.5.7"
     "@types/cookie-parser": "npm:^1.4.10"
     "@types/cors": "npm:^2.8.19"
     "@types/express": "npm:^4.17.25"
@@ -8576,8 +8548,6 @@ __metadata:
     "@types/nodemailer": "npm:^6.4.21"
     "@types/pg": "npm:^8.15.6"
     "@types/qrcode.react": "npm:^1.0.5"
-    "@types/react": "npm:^18.3.27"
-    "@types/react-dom": "npm:^18.3.7"
     "@types/react-is": "npm:^19"
     "@types/rebass": "npm:^4.0.15"
     "@types/signale": "npm:^1.4.7"
@@ -8600,7 +8570,7 @@ __metadata:
     email-validator: "npm:^2.0.4"
     envalid: "npm:^8.1.1"
     eslint: "npm:^8.57.1"
-    eslint-config-next: "npm:15.4.6"
+    eslint-config-next: "npm:^15.5.7"
     eslint-config-prettier: "npm:^9.1.2"
     eslint-plugin-prettier: "npm:^5.5.4"
     express: "npm:^4.22.1"
@@ -8619,7 +8589,7 @@ __metadata:
     morgan: "npm:^1.10.1"
     ms: "npm:^2.1.3"
     nanoid: "npm:3.3.11"
-    next: "npm:15.4.6"
+    next: "npm:^15.5.7"
     node-cron: "npm:^3.0.3"
     nodemailer: "npm:^7.0.11"
     nodemon: "npm:^3.1.11"
@@ -9352,19 +9322,19 @@ __metadata:
   languageName: node
   linkType: hard
 
-"next@npm:15.4.6":
-  version: 15.4.6
-  resolution: "next@npm:15.4.6"
+"next@npm:^15.5.7":
+  version: 15.5.7
+  resolution: "next@npm:15.5.7"
   dependencies:
-    "@next/env": "npm:15.4.6"
-    "@next/swc-darwin-arm64": "npm:15.4.6"
-    "@next/swc-darwin-x64": "npm:15.4.6"
-    "@next/swc-linux-arm64-gnu": "npm:15.4.6"
-    "@next/swc-linux-arm64-musl": "npm:15.4.6"
-    "@next/swc-linux-x64-gnu": "npm:15.4.6"
-    "@next/swc-linux-x64-musl": "npm:15.4.6"
-    "@next/swc-win32-arm64-msvc": "npm:15.4.6"
-    "@next/swc-win32-x64-msvc": "npm:15.4.6"
+    "@next/env": "npm:15.5.7"
+    "@next/swc-darwin-arm64": "npm:15.5.7"
+    "@next/swc-darwin-x64": "npm:15.5.7"
+    "@next/swc-linux-arm64-gnu": "npm:15.5.7"
+    "@next/swc-linux-arm64-musl": "npm:15.5.7"
+    "@next/swc-linux-x64-gnu": "npm:15.5.7"
+    "@next/swc-linux-x64-musl": "npm:15.5.7"
+    "@next/swc-win32-arm64-msvc": "npm:15.5.7"
+    "@next/swc-win32-x64-msvc": "npm:15.5.7"
     "@swc/helpers": "npm:0.5.15"
     caniuse-lite: "npm:^1.0.30001579"
     postcss: "npm:8.4.31"
@@ -9407,7 +9377,7 @@ __metadata:
       optional: true
   bin:
     next: dist/bin/next
-  checksum: d0cf35100cb0903e6828f9279d5d0ac637e181427845dd2afa224b42db09f3de805522c2b9bbc3b0f630d60e4c26c79b4c1a99d434500968591b864bf341b1d5
+  checksum: baf5b9f42416c478702b3894479b3d7862bc4abf18afe0e43b7fc7ed35567b8dc6cb76cd94906505bab9013cb8d0f3370cdc0451c01ec15ae5a638d37b5ba7c7
   languageName: node
   linkType: hard
 
@@ -10563,14 +10533,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-dom@npm:19.3.0-canary-fd524fe0-20251121":
-  version: 19.3.0-canary-fd524fe0-20251121
-  resolution: "react-dom@npm:19.3.0-canary-fd524fe0-20251121"
+"react-dom@npm:canary":
+  version: 19.3.0-canary-ec9cc003-20251208
+  resolution: "react-dom@npm:19.3.0-canary-ec9cc003-20251208"
   dependencies:
-    scheduler: "npm:0.28.0-canary-fd524fe0-20251121"
+    scheduler: "npm:0.28.0-canary-ec9cc003-20251208"
   peerDependencies:
-    react: 19.3.0-canary-fd524fe0-20251121
-  checksum: 547cd5ff42d2bf826dcc4d5dafc3679c29fc7cc2feb9d47c700041f14480cb7bfeaca926934c50890b82358af3597f29c6a3f8f398c945f6c5978162606009ab
+    react: 19.3.0-canary-ec9cc003-20251208
+  checksum: b4173c99dfbe0040193f48c9ccd958f3c32a05ab99d8b9c65339326acbc775590901bc6010d39b718f5b674f79f9965f8926903f47b48e532cc69c48d6e36cfa
   languageName: node
   linkType: hard
 
@@ -10679,10 +10649,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react@npm:19.3.0-canary-fd524fe0-20251121":
-  version: 19.3.0-canary-fd524fe0-20251121
-  resolution: "react@npm:19.3.0-canary-fd524fe0-20251121"
-  checksum: 923af510a02d55f18b0743ca669343cd3236b92165998c94d9651c0d2dc5b36cfe4648f3f511192384cdc648696910b01e0c46c35129707267588f3c91e611e9
+"react@npm:canary":
+  version: 19.3.0-canary-ec9cc003-20251208
+  resolution: "react@npm:19.3.0-canary-ec9cc003-20251208"
+  checksum: 68f3107567fa8d8dbb292de9289059adf83406e414ac9cdf88da54c65404becda3c452943e2789e0dfe920c60c96b3fe9d5f53813972cb5f88314aea83ab1941
   languageName: node
   linkType: hard
 
@@ -11127,10 +11097,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"scheduler@npm:0.28.0-canary-fd524fe0-20251121":
-  version: 0.28.0-canary-fd524fe0-20251121
-  resolution: "scheduler@npm:0.28.0-canary-fd524fe0-20251121"
-  checksum: 4c235c35fca427d1df7f8502af1e1f6040c6221bb5bf3c9c62800abf24580b3a1b07a5ee604afd6fdf5766b192a37ea50086e103d49cb117061533abe5822a05
+"scheduler@npm:0.28.0-canary-ec9cc003-20251208":
+  version: 0.28.0-canary-ec9cc003-20251208
+  resolution: "scheduler@npm:0.28.0-canary-ec9cc003-20251208"
+  checksum: 9e6f32601e706bdeb062f754f0f72fa9aeb7d716fbdf213e0466ef398bdad30c08a72e90cd29698da88f0beff5be7c4b6254d0af99de2a5ffdc1374269c279bb
   languageName: node
   linkType: hard
 

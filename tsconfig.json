@@ -10,7 +10,9 @@
     "noEmit": false,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "strict": false
+    "strict": false,
+    "typeRoots": ["./types", "./node_modules/@types"],
+    "skipLibCheck": true
   },
-  "include": ["global.d.ts", "server"]
+  "include": ["global.d.ts", "server", "types/**/*.d.ts"]
 }
