@@ -10,8 +10,7 @@
     "noEmit": false,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "strict": false,
-    "skipLibCheck": true
+    "strict": false
   },
-  "include": ["global.d.ts", "server"]
+  "include": ["global.d.ts", "server", "types/**/*.d.ts"]
 }
