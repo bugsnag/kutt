@@ -8635,11 +8635,11 @@ __metadata:
     qrcode.react: "npm:^3.2.0"
     query-string: "npm:^8.2.0"
     re2: "npm:^1.22.3"
-    react: "npm:19.2.0-canary-3958d5d8-20250807"
+    react: "npm:19.3.0-canary-fd524fe0-20251121"
     react-copy-to-clipboard: "npm:^5.1.0"
-    react-dom: "npm:19.2.0-canary-3958d5d8-20250807"
+    react-dom: "npm:19.3.0-canary-fd524fe0-20251121"
     react-inlinesvg: "npm:^4.2.0"
-    react-is: "npm:^19.1.1"
+    react-is: "npm:^19.2.1"
     react-tooltip: "npm:^5.30.0"
     react-use-form-state: "npm:^0.13.2"
     rebass: "npm:^4.0.7"
@@ -10608,10 +10608,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-is@npm:^19.1.1":
-  version: 19.1.1
-  resolution: "react-is@npm:19.1.1"
-  checksum: 3dba763fcd69835ae263dcd6727d7ffcc44c1d616f04b7329e67aefdc66a567af4f8dcecdd29454c7a707c968aa1eb85083a83fb616f01675ef25e71cf082f97
+"react-is@npm:^19.2.1":
+  version: 19.2.1
+  resolution: "react-is@npm:19.2.1"
+  checksum: 0ebeaedb4ff615055cbcd758c7e22ba9644e21110adbd293dd1aada3591abf7399152a786cd120e324c10706d75e28c2130c27d1b9b5ae637aef4c52f4d17a91
   languageName: node
   linkType: hard
 
