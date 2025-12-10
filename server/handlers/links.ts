@@ -2,7 +2,6 @@ import { Handler } from "express";
 import { promisify } from "util";
 import bcrypt from "bcryptjs";
 import isbot from "isbot";
-import next from "next";
 import URL from "url";
 import dns from "dns";
 
@@ -252,7 +251,7 @@ export const ban: Handler = async (req, res) => {
   return res.status(200).send({ message: "Banned link successfully." });
 };
 
-export const redirect = (app: ReturnType<typeof next>): Handler => async (
+export const redirect: Handler = async (
   req,
   res,
   next
@@ -289,10 +288,10 @@ export const redirect = (app: ReturnType<typeof next>): Handler => async (
     return res.redirect("/banned");
   }
 
-  // 5. If wants to see link info, then redirect
+  // 5. If wants to see link info, return JSON instead
   const doesRequestInfo = /.*\+$/gi.test(req.params.id);
   if (doesRequestInfo && !link.password) {
-    return app.render(req, res, "/url-info", { target: link.target });
+    return res.status(200).json({ target: link.target });
   }
 
   // 6. If link is protected, redirect to password page

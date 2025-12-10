@@ -12,5 +12,5 @@
     "experimentalDecorators": true,
     "strict": false
   },
-  "include": ["global.d.ts", "server", "types/**/*.d.ts"]
+  "include": ["global.d.ts", "server"]
 }
