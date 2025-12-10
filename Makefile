@@ -1,12 +1,7 @@
 SHELL := /bin/bash
 NAME=kutt
 GCR_HOST=gcr.io/bugsnag-155907
-AWS_PROFILE="insighthub-production"
-ECR_REGION ?= us-east-1
-AWS_ACCOUNT_ID="357581182020"
-ECR_REGISTRY="${AWS_ACCOUNT_ID}.dkr.ecr.${ECR_REGION}.amazonaws.com"
 GCR_IMAGE=$(GCR_HOST)/$(NAME):$(VERSION)
-ECR_IMAGE=$(ECR_REGISTRY)/$(NAME):$(VERSION)
 
 .DEFAULT_GOAL := help
 
