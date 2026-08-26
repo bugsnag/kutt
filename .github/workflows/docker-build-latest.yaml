@@ -9,6 +9,10 @@ on:
     branches:
       - develop
 
+permissions:
+  contents: read
+  packages: write
+
 jobs:
   dockerhub-build-push:
     runs-on: ubuntu-latest
