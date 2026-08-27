@@ -63,7 +63,7 @@
     "pg": "^8.16.3",
     "re2": "^1.25.2",
     "signale": "^1.4.0",
-    "ua-parser-js": "^2.0.7",
+    "ua-parser-js": "^2.0.10",
     "url-regex-safe": "^4.0.0",
     "uuid": "^13.0.0",
     "winston": "^3.19.0",
