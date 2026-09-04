@@ -97,7 +97,6 @@
     "ts-node": "^10.9.2",
     "typescript": "^5.9.3"
   },
-  "packageManager": "yarn@4.0.2",
   "resolutions": {
     "tar": "7.5.19",
     "ip-address": "^10.3.1",
