@@ -3257,9 +3257,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"body-parser@npm:~1.20.3":
-  version: 1.20.4
-  resolution: "body-parser@npm:1.20.4"
+"body-parser@npm:^1.20.9":
+  version: 1.20.9
+  resolution: "body-parser@npm:1.20.9"
   dependencies:
     bytes: "npm:~3.1.2"
     content-type: "npm:~1.0.5"
@@ -3269,11 +3269,11 @@ __metadata:
     http-errors: "npm:~2.0.1"
     iconv-lite: "npm:~0.4.24"
     on-finished: "npm:~2.4.1"
-    qs: "npm:~6.14.0"
+    qs: "npm:~6.16.0"
     raw-body: "npm:~2.5.3"
     type-is: "npm:~1.6.18"
     unpipe: "npm:~1.0.0"
-  checksum: 569c1e896297d1fcd8f34026c8d0ab70b90d45343c15c5d8dff5de2bad08125fc1e2f8c2f3f4c1ac6c0caaad115218202594d37dcb8d89d9b5dcae1c2b736aa9
+  checksum: 685d3208335377a3dfc6d7bc8b2af6d40d38b9a72e25bab4d9f7aff19d059729d5b1b3a9f5561274f460020bb9166c211d5302abe0b45452665420ca5e16013b
   languageName: node
   linkType: hard
 
@@ -6111,7 +6111,7 @@ __metadata:
     ms: "npm:^2.1.3"
     nanoid: "npm:5.1.16"
     node-cron: "npm:^3.0.3"
-    nodemailer: "npm:^10.0.9"
+    nodemailer: "npm:^10.1.4"
     nodemon: "npm:^3.1.11"
     passport: "npm:^0.7.0"
     passport-jwt: "npm:^4.0.1"
@@ -6764,10 +6764,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"nodemailer@npm:^10.0.9":
-  version: 10.0.15
-  resolution: "nodemailer@npm:10.0.15"
-  checksum: d91aa2d9f697143cce981f0208fe69c46690cb2392ba35e60adbb441ee5ef0edfc977c23d557b98f08e47f1fe64799fc2f34e7f0f2e50b0a1fd3eb6724b3c30d
+"nodemailer@npm:^10.1.4":
+  version: 10.3.1
+  resolution: "nodemailer@npm:10.3.1"
+  checksum: a960ba9e7cb8f7135b828fb72bcdfd061bb914c6357578ed6613dd5303e8461710a1151210e95a92542461128e900038dd0794fc27bd74b297bd822013cfe8e8
   languageName: node
   linkType: hard
 
@@ -8467,10 +8467,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"undici@npm:8.10.2":
-  version: 8.10.2
-  resolution: "undici@npm:8.10.2"
-  checksum: 66d7fc69149207cab570d6abbc9e965b6afe1ae889a7d46945b431165c973d6a56f3dd8b70a856e7ae1e550b6366a1cde6f06e68640587f0dadca38de72995ee
+"undici@npm:8.12.2":
+  version: 8.12.2
+  resolution: "undici@npm:8.12.2"
+  checksum: 25b0e0a69585b2b2e2678fdcd07942bbe15b14c6686d496712b0ee37ce15753af90ab7335ee42c8e65ec60b72bf3a21adc72bbabf86c1eaca74f27a3779532de
   languageName: node
   linkType: hard
 
